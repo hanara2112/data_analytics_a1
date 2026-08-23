@@ -1,0 +1,257 @@
+EXTRACT listings.csv — observe only, do not slice yet
+========================================================================
+path: /Users/aryamanbahl/IIITH/m26/data_analytics/M26_Data_Analytics_I_Assignment_1/listings.csv
+shape: 30,259 rows x 90 columns
+unique listing id: 30,259
+unique host_id: 16,474
+scrape_id (constant): 20260614073253
+last_scraped values: ['2026-06-14', '2026-06-15', '2026-06-22', '2026-06-23']
+
+TAG AUDIT FOR CLEANUP KEEP/DROP
+------------------------------------------------------------------------
+KEEP names in file: 43/43
+DROP names in file: 10/10
+KEEP missing from file: none
+DROP missing from file: none
+untagged columns: 37
+KEEP that are 100% empty: ['host_since', 'host_response_time', 'host_response_rate', 'host_acceptance_rate', 'instant_bookable']
+DROP that are 100% empty: ['host_thumbnail_url', 'calendar_updated']
+UNTAGGED that are 100% empty: ['neighborhood_overview', 'host_neighbourhood', 'host_total_listings_count', 'host_verifications', 'neighbourhood']
+constant (1 non-null value): ['scrape_id']
+
+UNTAGGED COLUMN NAMES
+------------------------------------------------------------------------
+  last_scraped                                     null=  0.0%  nunique=     4
+  source                                           null=  0.0%  nunique=     2
+  name                                             null=  0.0%  nunique= 28835
+  description                                      null=  3.0%  nunique= 24173
+  neighborhood_overview                            null=100.0%  nunique=     0 EMPTY
+  hosts_time_as_user_years                         null=  1.2%  nunique=    18
+  hosts_time_as_user_months                        null=  1.2%  nunique=    12
+  hosts_time_as_host_years                         null=  1.2%  nunique=    16
+  hosts_time_as_host_months                        null=  1.2%  nunique=    12
+  host_location                                    null= 23.7%  nunique=   713
+  host_about                                       null= 41.0%  nunique=  9242
+  host_neighbourhood                               null=100.0%  nunique=     0 EMPTY
+  host_listings_count                              null=  1.2%  nunique=   132
+  host_total_listings_count                        null=100.0%  nunique=     0 EMPTY
+  host_verifications                               null=100.0%  nunique=     0 EMPTY
+  host_has_profile_pic                             null=  1.2%  nunique=     2
+  neighbourhood                                    null=100.0%  nunique=     0 EMPTY
+  price_quote_checkout_date                        null= 25.1%  nunique=   357
+  minimum_minimum_nights                           null=  0.0%  nunique=    86
+  maximum_minimum_nights                           null=  0.0%  nunique=   118
+  minimum_maximum_nights                           null=  0.0%  nunique=   225
+  maximum_maximum_nights                           null=  0.0%  nunique=   231
+  minimum_nights_avg_ntm                           null=  0.0%  nunique=   349
+  maximum_nights_avg_ntm                           null=  0.0%  nunique=   871
+  calendar_last_scraped                            null=  0.0%  nunique=     4
+  number_of_reviews_l30d                           null=  0.0%  nunique=    38
+  availability_eoy                                 null=  0.0%  nunique=   202
+  number_of_reviews_ly                             null=  0.0%  nunique=   164
+  review_scores_accuracy                           null= 28.3%  nunique=   152
+  review_scores_cleanliness                        null= 28.3%  nunique=   175
+  review_scores_checkin                            null= 28.3%  nunique=   129
+  review_scores_communication                      null= 28.3%  nunique=   144
+  review_scores_location                           null= 28.3%  nunique=   146
+  review_scores_value                              null= 28.3%  nunique=   166
+  calculated_host_listings_count_entire_homes      null=  0.0%  nunique=    52
+  calculated_host_listings_count_private_rooms     null=  0.0%  nunique=    40
+  calculated_host_listings_count_shared_rooms      null=  0.0%  nunique=    10
+
+COLUMN PROFILE (all 90)
+------------------------------------------------------------------------
+column                                       role       dtype    null%   nunique  empty const
+id                                           KEYS       int64      0.0%    30259     0     0
+listing_url                                  DROP       object     0.0%    30259     0     0
+scrape_id                                    DROP       int64      0.0%        1     0     1
+last_scraped                                 UNTAGGED   object     0.0%        4     0     0
+source                                       UNTAGGED   object     0.0%        2     0     0
+name                                         UNTAGGED   object     0.0%    28835     0     0
+description                                  UNTAGGED   object     3.0%    24173     0     0
+neighborhood_overview                        UNTAGGED   float64  100.0%        0     1     0
+picture_url                                  DROP       object     0.0%    29608     0     0
+host_id                                      KEYS       int64      0.0%    16474     0     0
+host_url                                     DROP       object     0.0%    16474     0     0
+host_profile_id                              DROP       float64    1.2%    16385     0     0
+host_profile_url                             DROP       object     1.2%    16386     0     0
+host_name                                    HOST       object     1.2%     7001     0     0
+host_since                                   HOST       float64  100.0%        0     1     0
+hosts_time_as_user_years                     UNTAGGED   float64    1.2%       18     0     0
+hosts_time_as_user_months                    UNTAGGED   float64    1.2%       12     0     0
+hosts_time_as_host_years                     UNTAGGED   float64    1.2%       16     0     0
+hosts_time_as_host_months                    UNTAGGED   float64    1.2%       12     0     0
+host_location                                UNTAGGED   object    23.7%      713     0     0
+host_about                                   UNTAGGED   object    41.0%     9242     0     0
+host_response_time                           HOST       float64  100.0%        0     1     0
+host_response_rate                           HOST       float64  100.0%        0     1     0
+host_acceptance_rate                         HOST       float64  100.0%        0     1     0
+host_is_superhost                            HOST       object     1.2%        2     0     0
+host_thumbnail_url                           DROP       float64  100.0%        0     1     0
+host_picture_url                             DROP       object     1.2%    15949     0     0
+host_neighbourhood                           UNTAGGED   float64  100.0%        0     1     0
+host_listings_count                          UNTAGGED   float64    1.2%      132     0     0
+host_total_listings_count                    UNTAGGED   float64  100.0%        0     1     0
+host_verifications                           UNTAGGED   float64  100.0%        0     1     0
+host_has_profile_pic                         UNTAGGED   object     1.2%        2     0     0
+host_identity_verified                       HOST       object     1.2%        2     0     0
+neighbourhood                                UNTAGGED   float64  100.0%        0     1     0
+neighbourhood_cleansed                       LOCATION   object     0.0%      223     0     0
+neighbourhood_group_cleansed                 LOCATION   object     0.0%        5     0     0
+latitude                                     LOCATION   float64    0.0%    20100     0     0
+longitude                                    LOCATION   float64    0.0%    18697     0     0
+property_type                                PROPERTY   object     0.0%       69     0     0
+room_type                                    PROPERTY   object     0.0%        4     0     0
+accommodates                                 PROPERTY   int64      0.0%       16     0     0
+bathrooms                                    PROPERTY   float64   33.4%       19     0     0
+bathrooms_text                               PROPERTY   object     0.5%       33     0     0
+bedrooms                                     PROPERTY   float64   36.3%       16     0     0
+beds                                         PROPERTY   float64   31.1%       20     0     0
+amenities                                    PROPERTY   object     0.0%    25118     0     0
+price                                        PRICE      object    28.9%    11417     0     0
+price_quote_checkin_date                     PRICE      object    25.1%      334     0     0
+price_quote_checkout_date                    UNTAGGED   object    25.1%      357     0     0
+price_quote_total_price                      PRICE      float64   28.9%    12475     0     0
+price_quote_price_per_night                  PRICE      float64   28.9%    11417     0     0
+price_quote_raw                              DROP       object    25.1%    19766     0     0
+minimum_nights                               CALENDAR   float64    0.0%       86     0     0
+maximum_nights                               CALENDAR   float64    0.0%      231     0     0
+minimum_minimum_nights                       UNTAGGED   float64    0.0%       86     0     0
+maximum_minimum_nights                       UNTAGGED   float64    0.0%      118     0     0
+minimum_maximum_nights                       UNTAGGED   float64    0.0%      225     0     0
+maximum_maximum_nights                       UNTAGGED   float64    0.0%      231     0     0
+minimum_nights_avg_ntm                       UNTAGGED   float64    0.0%      349     0     0
+maximum_nights_avg_ntm                       UNTAGGED   float64    0.0%      871     0     0
+calendar_updated                             DROP       float64  100.0%        0     1     0
+has_availability                             CALENDAR   object     1.1%        2     0     0
+availability_30                              CALENDAR   int64      0.0%       31     0     0
+availability_60                              CALENDAR   int64      0.0%       61     0     0
+availability_90                              CALENDAR   int64      0.0%       91     0     0
+availability_365                             CALENDAR   int64      0.0%      366     0     0
+calendar_last_scraped                        UNTAGGED   object     0.0%        4     0     0
+number_of_reviews                            REVIEWS    int64      0.0%      528     0     0
+number_of_reviews_ltm                        REVIEWS    int64      0.0%      163     0     0
+number_of_reviews_l30d                       UNTAGGED   int64      0.0%       38     0     0
+availability_eoy                             UNTAGGED   int64      0.0%      202     0     0
+number_of_reviews_ly                         UNTAGGED   int64      0.0%      164     0     0
+estimated_occupancy_l365d                    OTHER      int64      0.0%       50     0     0
+estimated_revenue_l365d                      OTHER      float64   28.9%     7417     0     0
+first_review                                 REVIEWS    object    28.3%     4595     0     0
+last_review                                  REVIEWS    object    28.3%     3268     0     0
+review_scores_rating                         REVIEWS    float64   28.3%      155     0     0
+review_scores_accuracy                       UNTAGGED   float64   28.3%      152     0     0
+review_scores_cleanliness                    UNTAGGED   float64   28.3%      175     0     0
+review_scores_checkin                        UNTAGGED   float64   28.3%      129     0     0
+review_scores_communication                  UNTAGGED   float64   28.3%      144     0     0
+review_scores_location                       UNTAGGED   float64   28.3%      146     0     0
+review_scores_value                          UNTAGGED   float64   28.3%      166     0     0
+license                                      OTHER      object    82.5%     2019     0     0
+instant_bookable                             OTHER      float64  100.0%        0     1     0
+calculated_host_listings_count               HOST       int64      0.0%       70     0     0
+calculated_host_listings_count_entire_homes  UNTAGGED   int64      0.0%       52     0     0
+calculated_host_listings_count_private_rooms UNTAGGED   int64      0.0%       40     0     0
+calculated_host_listings_count_shared_rooms  UNTAGGED   int64      0.0%       10     0     0
+reviews_per_month                            REVIEWS    float64   28.3%      767     0     0
+
+MARKET SHAPE
+------------------------------------------------------------------------
+boroughs:
+neighbourhood_group_cleansed
+Manhattan        13709
+Brooklyn         10562
+Queens            4680
+Bronx              976
+Staten Island      332
+room_type:
+room_type
+Entire home/apt    16808
+Private room       12713
+Hotel room           520
+Shared room          218
+property_type distinct: 69
+source:
+source
+city scrape        21461
+previous scrape     8798
+
+PRICE
+------------------------------------------------------------------------
+price missing: 8,744 (28.9%)
+price missing by source:
+price            False  True    All
+source                             
+city scrape      20386  1075  21461
+previous scrape   1129  7669   8798
+All              21515  8744  30259
+priced listings (USD / night):
+count       21515.0
+mean     278.229518
+std      531.730477
+min            4.58
+5%            52.73
+25%          96.875
+50%          174.69
+75%          302.72
+95%           759.0
+99%        1713.935
+max        30972.96
+price vs price_quote_price_per_night: both present 21,514; max abs diff 0.0
+quote checkin present / price missing: 1163
+
+HOST BLOCK
+------------------------------------------------------------------------
+host_since empty: True
+replacement tenure fields (not in KEEP): hosts_time_as_{user,host}_{years,months}
+       hosts_time_as_host_years  hosts_time_as_host_months
+count              29910.000000               29910.000000
+mean                   6.684286                   5.631829
+std                    3.889389                   3.356700
+min                    0.000000                   0.000000
+25%                    3.000000                   3.000000
+50%                    7.000000                   5.000000
+75%                   10.000000                   8.000000
+max                   15.000000                  11.000000
+host_name/superhost/identity-verified missing together: 349 rows
+those rows are all previous scrape: True
+host_response_time/rate and host_acceptance_rate empty: True
+
+PROPERTY / TEXT
+------------------------------------------------------------------------
+bathrooms numeric missing: 33.4%; bathrooms_text missing: 0.5%
+bedrooms missing: 36.3%; beds missing: 31.1%
+amenities JSON lists: mean length 28.5; distinct strings 6179
+top amenities:
+   28275  Wifi
+   28083  Smoke alarm
+   26079  Kitchen
+   24972  Carbon monoxide alarm
+   22066  Essentials
+   21827  Hangers
+   21603  Hot water
+   21373  Air conditioning
+   19751  Heating
+   19683  Hair dryer
+   19388  Iron
+   18468  Bed linens
+
+REVIEWS / MODELLED
+------------------------------------------------------------------------
+number_of_reviews == 0 iff first_review null: True
+instant_bookable empty: True
+license missing: 82.5%; value 'Exempt' count: 2956
+estimated_revenue_l365d missing iff price missing: True
+estimated_occupancy_l365d == 0: 65.4%
+
+VERDICT FOR CLEANUP TAGS
+------------------------------------------------------------------------
+Keep as-is: KEYS, LOCATION, PROPERTY, CALENDAR, most of PRICE and REVIEWS.
+Do not KEEP (empty in this snapshot): host_since, host_response_time,
+  host_response_rate, host_acceptance_rate, instant_bookable.
+Swap host_since -> hosts_time_as_host_years / hosts_time_as_host_months.
+Add to PRICE: price_quote_checkout_date (needed to read total_price).
+Add as FLAG, not location: source (explains most missing prices).
+Treat estimated_* as modelled; license is sparse.
+DROP list is correct. Also empty and unused: neighborhood_overview,
+  neighbourhood, host_neighbourhood, host_total_listings_count, host_verifications.
+37 untagged columns remain; most are scrape metadata, nested night bounds,
+  review sub-scores, or host-count splits. Safe to leave out of a first EDA view.

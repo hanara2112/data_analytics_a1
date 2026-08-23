@@ -1,0 +1,32 @@
+cleanup 2026-08-23 17:05 UTC
+rows in/out: 30,259 / 30,259
+columns: 54
+unique hosts: 16,474
+
+source × has_price
+has_price        False   True    All
+source                              
+city scrape       1075  20386  21461
+previous scrape   7669   1129   8798
+All               8744  21515  30259
+
+price_usd among has_price: n=21,515  median=174.69  min=4.58  max=30972.96
+host_is_superhost: 7096 true, 22814 false, 349 NA
+
+flags
+  has_price                         21515
+  has_reviews                       21700
+  has_review_score                  21700
+  is_previous_scrape                 8798
+  is_long_stay_only                 24717
+  is_multi_listing_host             16985
+  flag_geo_outside_nyc                  0
+  flag_price_extreme                  202
+  flag_zero_accommodates                0
+  flag_quote_without_price           1163
+  flag_score_without_reviews            0
+
+do not treat estimated_occupancy / estimated_revenue as observed earnings
+amenities stays JSON text; amenity_count is the list length, not one-hot
+price_usd is a scrape quote (often a monthly-window nightly), not a booking
+previous scrape is a different population, not 'cheap'
