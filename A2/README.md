@@ -1,7 +1,8 @@
 # Assignment 2 — Part 2
 
 The complete solution is in `question2.ipynb`. The written report is in
-`docs/report.md`.
+`docs/report.md`. `inspect_data.ipynb` and `data_dictionary_mappings_buc.ipynb`
+show the data inspection and dimension-selection work completed beforehand.
 
 To run the notebook, install `requirements.txt` and place the supplied dataset at:
 
