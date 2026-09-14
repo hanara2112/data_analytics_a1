@@ -1,4 +1,13 @@
-# NYC Airbnb Assignment
+# Data Analytics Assignments
+
+## Assignment 2 — Part 2
+
+The AOI and BUC solution is in [`A2/`](A2/). Start with:
+
+- `A2/question2.ipynb` — complete analysis
+- `A2/docs/report.md` — final report
+
+## Assignment 1 — NYC Airbnb
 
 This folder contains the complete Part II workflow, from the original Airbnb
 data to the final report.
