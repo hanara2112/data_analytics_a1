@@ -1,0 +1,14 @@
+{
+  "ova": {
+    "C": 1,
+    "class_weight": "balanced",
+    "gamma": 0.1,
+    "kernel": "rbf"
+  },
+  "ovo": {
+    "C": 10,
+    "class_weight": "balanced",
+    "gamma": "scale",
+    "kernel": "rbf"
+  }
+}
