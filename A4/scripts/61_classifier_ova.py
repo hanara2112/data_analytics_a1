@@ -1,4 +1,4 @@
-"""Usage: python 61_classifier_ova.py <path-to-test.csv>"""
+"""Usage: python scripts/61_classifier_ova.py <path-to-test.csv>"""
 
 from svm_classifier import run_classifier
 

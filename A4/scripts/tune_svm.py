@@ -123,7 +123,7 @@ def main():
 
     # Refit on all labelled rows and predict the supplied test set.
     for method in CLASSIFIERS:
-        predict_file(method, BASE_DIR / "data/Customer_Test.csv", BASE_DIR / f"{method}.csv")
+        predict_file(method, BASE_DIR / "data/Customer_Test.csv", output_dir / f"{method}.csv")
 
     print("\nSaved results to", output_dir)
     print("CV scores were used for selection; they are not independent test scores.")

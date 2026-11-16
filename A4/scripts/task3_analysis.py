@@ -1,4 +1,4 @@
-"""Task 3 analysis. Run from A4 with: python task3_analysis.py"""
+"""Task 3 analysis. Run from A4 with: python scripts/task3_analysis.py"""
 
 from pathlib import Path
 
@@ -16,7 +16,7 @@ from svm_classifier import predict_ova, train_ova
 from tune_svm import prepare_folds
 
 
-BASE = Path(__file__).resolve().parent
+BASE = Path(__file__).resolve().parent.parent
 OUT = BASE / "results"
 FIGURES = OUT / "figures"
 LABELS = ["A", "B", "C", "D"]

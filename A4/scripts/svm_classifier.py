@@ -10,7 +10,7 @@ from sklearn.svm import SVC
 from preprocess import build_preprocessor
 
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 def _training_data(X, y):
@@ -137,6 +137,6 @@ def run_classifier(method):
     args = parser.parse_args()
     params_file = "best_params.json" if args.selection == "accuracy" else "best_macro_params.json"
     if not (BASE_DIR / "results" / params_file).exists():
-        parser.error("Run tune_svm.py first to select and save hyperparameters.")
+        parser.error("Run scripts/tune_svm.py first to select and save hyperparameters.")
     suffix = "" if args.selection == "accuracy" else "_macro"
-    predict_file(method, args.test_file, Path(f"{method}{suffix}.csv"), selection=args.selection)
+    predict_file(method, args.test_file, BASE_DIR / "results" / f"{method}{suffix}.csv", selection=args.selection)

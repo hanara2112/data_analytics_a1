@@ -9,7 +9,7 @@ from sklearn.tree import DecisionTreeClassifier
 
 from preprocess import build_preprocessor
 
-BASE = Path(__file__).resolve().parent
+BASE = Path(__file__).resolve().parent.parent
 COUNTS = [1, 5, 10, 25, 50, 100, 200]
 
 class RandomForest:

@@ -50,7 +50,7 @@ This gives **30 configurations per method**. We kept one choice by mean accuracy
 
 OVO’s small accuracy advantage comes with poor coverage of the smaller segments. Selecting it by macro-F1 improves that balance, with about two percentage points less accuracy.
 
-The final models were refitted on all labelled rows. [ova.csv](../ova.csv) and [ovo.csv](../ovo.csv) each contain 789 predictions in test-row order, in a single `predicted` column. The command-line scripts also support the separate macro-F1 choice.
+The final models were refitted on all labelled rows. [ova.csv](../results/ova.csv) and [ovo.csv](../results/ovo.csv) each contain 789 predictions in test-row order, in a single `predicted` column. The command-line scripts also support the separate macro-F1 choice.
 
 ## Task 2 - Random forest
 
@@ -76,7 +76,7 @@ We tested every required tree count at depth 8 and unrestricted depth. Preproces
 
 Accuracy generally improves as voting becomes less dependent on one tree, then levels off near 0.35. Small fluctuations are expected; adding trees does not guarantee a gain at every step. OOB coverage rises from about 37% with one tree to 99% with ten.
 
-We selected **200 trees at depth 8**, the highest mean CV accuracy in Task 2(b), though 100 trees is effectively tied. The [notebook](../notebooks/61_random_forest.ipynb) displays all 789 predictions and saves [rf.csv](../rf.csv). Its validation accuracy is **0.347**, with macro-F1 **0.245**. Test predictions are A=573, B=23, C=0 and D=193. Per-class validation scores appear in Task 3 below.
+We selected **200 trees at depth 8**, the highest mean CV accuracy in Task 2(b), though 100 trees is effectively tied. The [notebook](../notebooks/61_random_forest.ipynb) displays all 789 predictions and saves [rf.csv](../results/rf.csv). Its validation accuracy is **0.347**, with macro-F1 **0.245**. Test predictions are A=573, B=23, C=0 and D=193. Per-class validation scores appear in Task 3 below.
 
 Preprocessing is fitted before bootstrapping, so OOB rows still contribute to the fold’s preprocessing statistics. We therefore use five-fold CV as the main performance estimate.
 

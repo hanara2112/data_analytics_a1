@@ -19,3 +19,7 @@ See the [assignment guide](A2/README.md), [written report](A2/docs/report.md), a
 MovieLens association rule mining and recommendation: [`A3/`](A3/).
 
 The dataset was downloaded from the [MovieLens 100k Small Dataset link provided in the assignment](https://www.kaggle.com/datasets/fuzzywizard/movielens-100k-small-dataset). Its README identifies the version as `ml-latest-small`, containing **100,836 ratings from 610 users**.
+
+## Assignment 4
+
+Customer classification, clustering and campaign analysis: [A4 guide](A4/README.md). Current work: binary SVMs combined into one-vs-all and one-vs-one classifiers.

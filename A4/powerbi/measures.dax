@@ -1,0 +1,12 @@
+Total Spending Measure =
+SUM('marketing_campaign 1'[Total_Spending])
+
+Campaign Response Rate =
+DIVIDE(
+    SUM('marketing_campaign 1'[Response]),
+    COUNTROWS('marketing_campaign 1'),
+    0
+)
+
+Total Customers =
+DISTINCTCOUNT('marketing_campaign 1'[ID])
