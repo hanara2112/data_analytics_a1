@@ -1,5 +1,3 @@
-"""Task 3 analysis. Run from A4 with: python scripts/task3_analysis.py"""
-
 from pathlib import Path
 
 import matplotlib
